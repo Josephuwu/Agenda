@@ -1,3 +1,25 @@
+<?php
+    if ($_POST) {
+        try {
+            $nombre = $_POST['nombre'];
+            $correo = $_POST['correo'];
+            $password = $_POST['password'];
+
+            $conexion = new PDO('mysql:host=localhost;dbname=tienda', 'root', '');
+            $consulta = $conexion->prepare('INSERT INTO usuario VALUES (NULL, :nombre, :correo, :contra)');    
+    
+            $consulta->execute(array(":nombre" => $nombre, ":correo" => $correo, ":contra" => $password));
+            header('Location: index.html');
+            
+        } catch (PDOException $e) {
+            echo "Vale madre: " . $e->getMessage();
+        }
+    }
+    else{
+        echo 'no hay datos';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +38,37 @@
 <body>
     <main>
         <div>
-            <form action="">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <input
                   type="input"
                   class="form-control rounded-3"
                   id="nombre"
                   name="nombre"
-                  placeholder="your name"
+                  placeholder="Tu nombre"
                 />
                 <label for="nombre">Name</label>
+                <input
+                  type="email"
+                  class="form-control rounded-3"
+                  id="correo"
+                  name="correo"
+                  placeholder="name@example.com"
+                />
+                <label for="correo">Email address</label>
+                <input
+                  type="password"
+                  class="form-control rounded-3"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                />
+                <label for="password">Password</label>
+                <button
+                class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                type="submit"
+                >
+                Sign up
+              </button>
             </form>
         </div>
     </main>
