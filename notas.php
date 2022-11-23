@@ -42,7 +42,7 @@
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Nombre</span>
-                <input id="nombre-nota" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                <input id="nombre-nota" type="text" class="form-control" aria-label="Notas" aria-describedby="basic-addon1">
             </div>
             <div class="input-group">
                 <textarea id="nota" class="form-control" aria-label="With textarea"></textarea>
