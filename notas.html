@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
     <link href="styles.css" rel="stylesheet" />
@@ -12,17 +13,19 @@
 </head>
 
 <body>
-    <header>
-        <img src="" alt="">
-        <a href="notas.php">Notas</a>
-        <a href="calendario.php">Calendario</a>
-        <a href="">Configuracion</a>
-    </header>
+    <!--Navegacion-->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("header.html");
+        });
+    </script>
     <main>
+        <h2>Ingrese su nota</h2>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Nombre</span>
-                <input id="nombre-nota" type="text" class="form-control" aria-label="Notas" aria-describedby="basic-addon1">
+                <span class="input-group-text" >Nombre</span>
+                <input id="nombre-nota" type="text" class="form-control">
             </div>
             <div class="input-group">
                 <textarea id="nota" class="form-control" aria-label="With textarea"></textarea>
