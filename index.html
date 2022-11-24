@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,18 +10,28 @@
     <link href="styles.css" rel="stylesheet" />
     <title>Agenda</title>
 </head>
+
 <body>
     <header>
         <div class="wrapper">
             <div class="sidebar">
                 <h1>Agenda</h1>
                 <ul>
-                    <li><a href="#"><i class="fas fa-home"></i>Calendario</a></li>
-                    <li><a href="#"><i class="fas fa-user"></i>Notas</a></li>
-                    <li><a href="#"><i class="fas fa-address-card"></i>Eventos</a></li>
-                </ul> 
+                    <li><a href="calendario.html" onclick="redirect(this.href)"><i class="fas fa-home"><img src="img/calendar.png"
+                                    alt="" width="30px">Calendario</i></a></li>
+                    <li><a href="notas.php" onclick="redirect(this.href)"><i class="fas fa-user"><img src="img/note.png" alt="" width="30px">Notas</i></a>
+                    </li>
+                    <li><a href="eventos.php" onclick="redirect(this.href)"><i class="fas fa-address-card"><img src="img/celebration.png" alt=""
+                                    width="30px">Eventos</i></a></li>
+                </ul>
             </div>
         </div>
     </header>
+    <script>
+        function redirect(page) {
+            window.parent.location = page;
+        }
+    </script>
 </body>
+
 </html>

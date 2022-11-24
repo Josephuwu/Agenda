@@ -34,17 +34,21 @@ body {
 
 .wrapper .sidebar ul li {
     display: flex;
-    justify-content: space-between;
-    padding: 15px;
+    vertical-align: middle;
+    padding: 10px;
     border-bottom: 1px solid #bdb8d7;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .wrapper .sidebar ul li a {
-    color: #bdb8d7;
+    color: #ffffff;
     display: block;
     text-decoration: none;
+}
+
+.wrapper .sidebar ul li a img{
+    padding-right: 10px;
 }
 
 .wrapper .sidebar ul li:hover {
