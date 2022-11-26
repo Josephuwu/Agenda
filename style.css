@@ -44,7 +44,7 @@ body {
     text-decoration: none;
 }
 
-.wrapper .sidebar ul li a img{
+.wrapper .sidebar ul li a img {
     padding-right: 10px;
 }
 
@@ -56,5 +56,9 @@ body {
     color: #fff;
 }
 
-
-
+.credentials {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: -5px;
+}
