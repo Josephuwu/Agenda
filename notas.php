@@ -14,9 +14,6 @@
             echo "Vale madre: " . $e->getMessage();
         }
     }
-    else{
-        echo 'no hay datos';
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +60,7 @@
                 rows="15"
               ></textarea>
             </div>
-            <button type="button" class="btn btn-outline-primary">
+            <button type="button boton" class="btn btn-outline-primary">
               Guardar
             </button>
           </form>
