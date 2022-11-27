@@ -58,3 +58,8 @@ body {
     bottom: 10px;
     left: -5px;
 }
+
+.contenedor {
+    margin: 1em 20em;
+    width: 10px;
+}
