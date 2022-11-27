@@ -1,3 +1,7 @@
+<?php
+$nombre = 'ALV';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,11 +31,7 @@
       <div class="contenedor">
         <div class="container-fluid">
             <!-- Show agenda elements dinamically -->
-            <div id="agenda-placeholder"></div>
-            <script>
-              $(function () {
-                $("#agenda-placeholder").load("agenda.php");
-              });
+            <h3><?php echo $nombre?></h3>
             </script>
         </div>
       </div>
