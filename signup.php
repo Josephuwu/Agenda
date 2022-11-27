@@ -5,7 +5,7 @@
             $correo = $_POST['correo'];
             $password = $_POST['password'];
 
-            $conexion = new PDO('mysql:host=localhost;dbname=tienda', 'root', '');
+            $conexion = new PDO('mysql:host=localhost;dbname=agenda', 'root', '');
             $consulta = $conexion->prepare('INSERT INTO usuario VALUES (NULL, :nombre, :correo, :contra)');    
     
             $consulta->execute(array(":nombre" => $nombre, ":correo" => $correo, ":contra" => $password));

@@ -1,7 +1,7 @@
 <?php
     if ($_POST) {
         try {
-            $conexion = new PDO('mysql:host=localhost;dbname=tienda', 'root', '');
+            $conexion = new PDO('mysql:host=localhost;dbname=agenda', 'root', '');
             session_start();
             $resultado = $conexion->query('SELECT * FROM usuario WHERE correo = "' . $_POST['correo'] . '" AND contra = "' . $_POST['contra'] . '"');
            
