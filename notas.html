@@ -24,26 +24,30 @@
       });
     </script>
     <main>
-      <div class="container-fluid">
-        <h2>Ingrese su nota</h2>
-        <form
-          action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
-          method="post"
-        >
-          <div class="input-group mb-3">
-            <span class="input-group-text">Nombre</span>
-            <input id="nombre-nota" type="text" class="form-control" />
-          </div>
-          <div class="input-group">
-            <textarea
-              id="nota"
-              class="form-control"
-              aria-label="With textarea"
-              rows="15"
-            ></textarea>
-          </div>
-          <button type="button" class="btn btn-outline-primary">Guardar</button>
-        </form>
+      <div class="contenedor">
+        <div class="container-fluid">
+          <h2>Ingrese su nota</h2>
+          <form
+            action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
+            method="post"
+          >
+            <div class="input-group mb-3">
+              <span class="input-group-text">Nombre</span>
+              <input id="nombre-nota" type="text" class="form-control" />
+            </div>
+            <div class="input-group">
+              <textarea
+                id="nota"
+                class="form-control"
+                aria-label="With textarea"
+                rows="15"
+              ></textarea>
+            </div>
+            <button type="button" class="btn btn-outline-primary">
+              Guardar
+            </button>
+          </form>
+        </div>
       </div>
     </main>
   </body>
