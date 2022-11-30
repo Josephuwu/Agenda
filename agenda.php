@@ -1,8 +1,7 @@
 <?php
  try {
   $conexion = new PDO('mysql:host=localhost;dbname=agenda', 'root', '');
-  $nombre_Nota;
-  $Nota;
+
   session_start();
   $usuario = $_SESSION["usuario"];
 
@@ -15,10 +14,16 @@
       $idUsuario = $fila['idUsuario'];
   }
 
+  if(empty($idUsuario)){
+    header("Location: index.html");
+  }
+
   $con = "SELECT Nombre, Nota FROM nota WHERE idUsuario = '".$idUsuario."'"; 
 
   $consulta = $conexion->query($con); 
   $consulta->execute(); 
+
+  $Nota[] = array('Nombre' => '', 'Nota' => '');
   
   foreach($consulta as $fila){
     $Nota[] = array('Nombre' => $fila['Nombre'], 'Nota' => $fila['Nota']);
@@ -28,6 +33,8 @@
   $con = "SELECT Nombre, Descripcion, Fecha, Hora FROM evento";
   $consulta2 = $conexion->query($con);
   $consulta2->execute();
+
+  $Eventos[] = array('Nombre' => '', 'Descripcion' => '', 'Fecha' => '', 'Hora' => '');
 
   foreach($consulta2 as $fila){
     $Eventos[] = array('Nombre' => $fila['Nombre'], 'Descripcion' => $fila['Descripcion'], 'Fecha' => $fila['Fecha'], 'Hora' => $fila['Hora']);

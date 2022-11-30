@@ -46,4 +46,12 @@
 function redirect(page) {
     window.parent.location = page;
 }
+const audio = new Audio("img/sonido.wav");
+const buttons = document.querySelectorAll("a");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    audio.play();
+  });
+});
 </script>

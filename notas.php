@@ -16,6 +16,10 @@
                 $idUsuario = $fila['idUsuario'];
             }
 
+            if(empty($idUsuario)){
+              header("Location: index.html");
+            }
+
             $consulta = $conexion->prepare('INSERT INTO nota VALUES (NULL, :nombre, :nota, :idUsuario)');    
     
             $consulta->execute(array(":nombre" => $nombre, ":nota" => $nota, ":idUsuario" => $idUsuario));
